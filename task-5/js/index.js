@@ -10,8 +10,10 @@
 
 */
 
-const getAllPropValues = (arr, prop) => arr.reduce((acc, objProp) => console.log(objProp[prop]), 0);
 
+const getAllPropValues = (arr, prop) => arr
+.filter(product => product[prop])
+.map(product => product[prop]);
 
 const products = [
   { name: 'Радар', price: 1300, quantity: 4 },
@@ -20,7 +22,6 @@ const products = [
   { name: 'Захват', price: 1200, quantity: 2 },
 ];
 
-console.log(getAllPropValues(products, 'name'))
-getAllPropValues(products, 'name'); // ['Радар', 'Сканер', 'Дроид', 'Захват']
-getAllPropValues(products, 'quantity'); // [4, 3, 7, 2]
-getAllPropValues(products, 'category'); // []
+console.log(getAllPropValues(products, 'name')); //['Радар', 'Сканер', 'Дроид', 'Захват']
+console.log(getAllPropValues(products, 'quantity')); // [4, 3, 7, 2]
+console.log(getAllPropValues(products, 'category')); // []

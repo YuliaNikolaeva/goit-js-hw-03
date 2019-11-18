@@ -8,16 +8,9 @@
 
 */
 
-const calculateTotalPrice = (arr, productName) => {
-  const sumGoods = arr.reduce((acc, good) => {
-    if (good.name === productName) {
-      const totalPrice = good.price * good.quantity;
-      acc = totalPrice;
-    };
-    return acc;
-  }, 0);
-  return sumGoods;
-};
+const calculateTotalPrice = (arr, productName) => arr.reduce((acc, good) => 
+good.name === productName ? good.price * good.quantity : acc, 0);
+
 
 const products = [
   { name: 'Радар', price: 1300, quantity: 4 },
