@@ -20,7 +20,7 @@ const user = {
 
 
 const addDescription = (obj, description) => {
-  return Object.entries({...obj, ...description});
+  return Object.assign({...obj, ...description});
 };
 
 
